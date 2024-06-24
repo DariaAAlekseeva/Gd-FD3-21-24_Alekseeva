@@ -3,8 +3,8 @@ import './App.css';
 function ProductTable(props) {
   const shopName = props.shopName;
   
-  let resTable = props.productsArray.map(function (elem) {
-    return <tr>
+  let resTable = props.productsArray.map(function (elem, index) {
+    return <tr key={index}>
       <td>{elem.name}</td>
       <td>{elem.price}</td>
       <td><img src={elem.pic} alt="" /></td>
@@ -27,7 +27,6 @@ function ProductTable(props) {
     </tbody>
   </table>
 }
-
 
 function App() {
   return (
